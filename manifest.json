@@ -1,0 +1,28 @@
+{
+  "name": "Upwork Better Filter",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Upwork is live, upwork is love",
+  "homepage_url": "http://bunga.top",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Inject!"
+  },
+  "permissions": [
+    "https://www.upwork.com/nx/find-work",
+    "https://www.upwork.com/ab/jobs/search/",
+    "webNavigation"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.upwork.com/nx/find-work",
+        "https://www.upwork.com/ab/jobs/search"
+      ],
+      "js": ["inject.js"]
+    }
+  ]
+}
